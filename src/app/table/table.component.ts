@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { UserServiceService } from '../user-service.service';
 export interface PeriodicElement {
   name: string;
   phNo: number;
@@ -12,11 +13,9 @@ export interface PeriodicElement {
 export class TableComponent {
   displayedColumns: string[] = ['name', 'phNo', 'email'];
   dataSource = [];
-  // userData:any=[];
 
-  constructor(){
-    let data: any = localStorage.getItem('userDetails')
-    this.dataSource = JSON.parse(data);
+  constructor(private userService:UserServiceService){
+    this.dataSource = this.userService.getUser();
     console.log(this.dataSource);
   }
 }
