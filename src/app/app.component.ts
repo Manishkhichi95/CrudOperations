@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { UserServiceService } from './userService/user-service.service';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,14 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'crudApplication';
+
+  constructor(private userService: UserServiceService) { }
+
+  goToUserList() {
+    this.userService.goToUserList();
+  }
+
+  goToAddUser() {
+    this.userService.goToAddUser();
+  }
 }

@@ -1,5 +1,5 @@
 
-<div>
+<div class="main">
     <h1>User Details Form</h1>
     <form [formGroup]="userDetails" (ngSubmit)="submitDetails(userDetails.value)">
     
@@ -28,6 +28,6 @@
         
             </mat-form-field>
         </div>
-        <button type="submit" mat-raised-button color="primary">Submit</button>
+        <button type="submit" mat-raised-button color="primary">{{edit? 'UpdateUser' : 'AddUser'}}</button>
       </form>
 </div>
