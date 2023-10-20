@@ -24,6 +24,7 @@ export class TableComponent implements AfterViewInit {
     this.userData = this.userService.getUser();
     this.userData = this.userData.slice();
     this.dataSource = new MatTableDataSource<Element>(this.userData);
+    console.log(this.dataSource.data)
   }
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
